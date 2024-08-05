@@ -10,6 +10,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.Color
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -23,7 +24,9 @@ class MainScreen(): Screen {
         val items = listOf("Home", "Settings", "Profile")
         Scaffold(
             bottomBar = {
-                BottomNavigation {
+                BottomNavigation (
+                    backgroundColor = Color.Green
+                ){
                     items.forEachIndexed { index, item ->
                         BottomNavigationItem(
                             icon = {
